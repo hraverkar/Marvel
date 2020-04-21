@@ -27,6 +27,8 @@ import { ComicsComponent } from './comics/comics.component';
 import { EventsComponent } from './events/events.component';
 import { SeriesComponent } from './series/series.component';
 import { StoriesComponent } from './stories/stories.component';
+import { UniversalService } from './universal.service';
+import { DataService } from './data.service';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, HeaderComponent, DescriptionComponent, NotFoundComponent, ComicsComponent, EventsComponent, SeriesComponent, StoriesComponent],
@@ -45,7 +47,8 @@ import { StoriesComponent } from './stories/stories.component';
     MatTabsModule,
     BrowserAnimationsModule
   ],
-  providers: [{ provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 5000 } },
+  providers: [UniversalService,DataService,
+    { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 5000 } },
     {
       provide: MAT_SNACK_BAR_DATA,
       useValue: {},
