@@ -1,0 +1,8 @@
+<div class="flex-container">
+    <mat-card (click)="otherInfo($event)" class="flex-item" *ngFor="let article of results">
+      <img mat-card-image src={{article.thumbnail.path}}.{{article.thumbnail.extension}} alt="{{article.name}}">
+      <mat-card-header>
+        <mat-card-title>{{article.name}}</mat-card-title>
+      </mat-card-header>
+    </mat-card>
+</div>
