@@ -1,8 +1,8 @@
 /* active tab */
-/* ::ng-deep .mat-tab-list .mat-tab-labels .mat-tab-label-active {
-  color:red;
-  background-color:deeppink;
-  } */
+::ng-deep .mat-tab-list .mat-tab-labels .mat-tab-label-active {
+  color:black;
+  background-color:#FFD740;
+  }
 
   /* ink bar */
   ::ng-deep .mat-ink-bar {
