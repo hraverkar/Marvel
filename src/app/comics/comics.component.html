@@ -1,10 +1,18 @@
-<!-- <div class="flex-container">
-  <mat-card (click)="comicInformation($event)" class="flex-item" *ngFor="let article of results">
-    <img mat-card-image src={{article.thumbnail.path}}.{{article.thumbnail.extension}} alt="{{article.name}}">
-    <mat-card-header>
-      <mat-card-title>{{article.name}}</mat-card-title>
-    </mat-card-header>
-  </mat-card>
-</div> -->
-<p>Comic Works</p>
-h1>Message from Parent : <h1></h1>
+<table mat-table [dataSource]="name" class="mat-elevation-z8">
+
+  <!-- Position Column-->
+  <ng-container matColumnDef="resourceURI">
+    <th mat-header-cell *matHeaderCellDef> URl </th>
+    <td mat-cell *matCellDef="let element"> {{element.resourceURI}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+

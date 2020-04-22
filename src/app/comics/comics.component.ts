@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from "@angular/core";
 export class ComicsComponent implements OnInit {
   @Input() comicsData: any;
   name:any;
+  displayedColumns:string[] = ['resourceURI', 'name'];
   constructor() {
   }
   ngOnInit() {
