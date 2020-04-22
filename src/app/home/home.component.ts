@@ -1,9 +1,9 @@
 import { Component, OnInit, Inject } from "@angular/core";
 import { DataService } from "../data.service";
-import { Router } from '@angular/router';
-import { MatSnackBar, MAT_SNACK_BAR_DATA } from '@angular/material/snack-bar';
-import { UniversalService } from '../universal.service';
-
+import { Router } from "@angular/router";
+import { MatSnackBar, MAT_SNACK_BAR_DATA } from "@angular/material/snack-bar";
+import * as _ from "lodash";
+import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 
 @Component({
   selector: "app-home",
@@ -14,22 +14,33 @@ export class HomeComponent implements OnInit {
   public character: any;
   public results: any;
 
-  constructor(private dataService: DataService, private router:Router,
+  constructor(
+    private dataService: DataService,
+    private router: Router,
     private _snackBar: MatSnackBar,
     @Inject(MAT_SNACK_BAR_DATA) public dataSnackBar: any,
-    private universalService :UniversalService) {
-    }
+    private spinnerService: Ng4LoadingSpinnerService
+  ) {}
 
   ngOnInit() {
+    this.spinnerService.show()
     this.dataService.getCharactersData().subscribe((res) => {
       this.character = res.body;
       this.results = this.character.data.results;
+      this.spinnerService.hide();
     });
   }
 
   otherInfo(event: any) {
-    this.universalService.getMessage(this.results);
-    this._snackBar.open(event.target.alt+" character selected !!", "Marvel", this.dataSnackBar.duration);
-    this.router.navigate(['/description']);
+    let selectedCard = event.target.alt;
+    this._snackBar.open(
+      selectedCard + " character selected !!",
+      "Marvel",
+      this.dataSnackBar.duration
+    );
+    var result = this.results.filter((x) => {
+      return x.name === selectedCard;
+    });
+    this.router.navigate(["/description"], { state: { data: result } });
   }
 }
