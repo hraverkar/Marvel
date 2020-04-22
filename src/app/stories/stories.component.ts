@@ -8,8 +8,11 @@ import { Component, OnInit, Input } from '@angular/core';
 export class StoriesComponent implements OnInit {
   @Input() storiesData: any;
   name:any;
+  displayedColumns:string[] = ['resourceURI', 'name', 'type'];
+
   constructor() {
   }
+
   ngOnInit() {
     this.name = this.storiesData;
     console.table(this.name);

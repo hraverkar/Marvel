@@ -8,8 +8,10 @@ import { Component, OnInit, Input } from '@angular/core';
 export class SeriesComponent implements OnInit {
   @Input() seriesData: any;
   name:any;
-  constructor() { }
+  displayedColumns:string[] = ['resourceURI', 'name'];
 
+  constructor() {
+  }
   ngOnInit() {
     this.name = this.seriesData;
     console.table(this.name);
