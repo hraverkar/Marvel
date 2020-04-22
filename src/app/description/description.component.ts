@@ -1,17 +1,26 @@
-import { Component, OnInit } from "@angular/core";
-import { Subscription } from "rxjs";
-import { UniversalService } from "../universal.service";
+import { Component } from "@angular/core";
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-description",
   templateUrl: "./description.component.html",
   styleUrls: ["./description.component.css"],
 })
-export class DescriptionComponent implements OnInit {
-  public Data: any;
-  message: any = {};
-  subscription: Subscription;
-  constructor(private universalService: UniversalService) {}
+export class DescriptionComponent {
+  public comicsData: any;
+  public eventsData: any;
+  public seriesData: any;
+  public storiesData: any;
 
-  ngOnInit() {}
+
+  constructor(private router :Router) {
+    this.getComicsData();
+  }
+
+  getComicsData(){
+   this.comicsData =this.router.getCurrentNavigation().extras.state.data[0].comics.items;
+   this.eventsData =this.router.getCurrentNavigation().extras.state.data[0].events.items;
+   this.seriesData =this.router.getCurrentNavigation().extras.state.data[0].series.items;
+   this.storiesData =this.router.getCurrentNavigation().extras.state.data[0].stories.items;
+  }
 }
