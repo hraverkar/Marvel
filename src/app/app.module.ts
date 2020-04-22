@@ -61,7 +61,6 @@ import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
     MatTabsModule,
     BrowserAnimationsModule,
     MatTableModule,
-    MatProgressSpinnerModule,
     Ng4LoadingSpinnerModule
 
 
