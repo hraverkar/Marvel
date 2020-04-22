@@ -1,5 +1,4 @@
-import { Component, OnInit } from "@angular/core";
-import { UniversalService } from "../universal.service";
+import { Component, OnInit, Input } from "@angular/core";
 
 @Component({
   selector: "app-comics",
@@ -7,9 +6,12 @@ import { UniversalService } from "../universal.service";
   styleUrls: ["./comics.component.css"],
 })
 export class ComicsComponent implements OnInit {
-  Data: any;
-  constructor(private universalService: UniversalService) {}
+  @Input() comicsData: any;
+  name:any;
+  constructor() {
+  }
   ngOnInit() {
-
+    this.name = this.comicsData;
+    console.table(this.name);
   }
 }
