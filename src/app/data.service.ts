@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpErrorResponse } from '@angular/common/http';
-import { throwError } from 'rxjs';
+import { throwError, Subject } from 'rxjs';
 import { catchError, retry, tap } from 'rxjs/operators';
 import { Md5 } from 'ts-md5/dist/md5';
+import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
- // public md5 = new Md5();
   public URL = 'https://gateway.marvel.com:443/';
 
   public publicKey = '3098e996e853abd6382fd5b79bf1ea2a';
@@ -16,7 +16,7 @@ export class DataService {
   public timestamp = new Date().getTime();
   public stringToHash = this.timestamp + this.privateKey + this.publicKey;
   public  hash = Md5.hashStr(this.stringToHash);
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient,private spinnerService: Ng4LoadingSpinnerService) {}
 
   getCharactersData() {
     return this.httpClient
@@ -48,6 +48,4 @@ export class DataService {
     window.alert(errorMessage);
     return throwError(errorMessage);
   }
-
-
 }
