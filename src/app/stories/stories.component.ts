@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-stories',
@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stories.component.css']
 })
 export class StoriesComponent implements OnInit {
-
-  constructor() { }
-
+  @Input() storiesData: any;
+  name:any;
+  constructor() {
+  }
   ngOnInit() {
+    this.name = this.storiesData;
+    console.table(this.name);
   }
 
 }
