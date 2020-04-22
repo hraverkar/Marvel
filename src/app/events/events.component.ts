@@ -8,11 +8,11 @@ import { Component, OnInit, Input } from '@angular/core';
 export class EventsComponent implements OnInit {
   @Input() eventsData: any;
   name:any;
-  constructor() { }
-
+  displayedColumns:string[] = ['resourceURI', 'name'];
+  constructor() {
+  }
   ngOnInit() {
     this.name = this.eventsData;
-    console.table(this.name);
   }
 
 }
