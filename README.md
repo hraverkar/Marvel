@@ -1,5 +1,5 @@
 # Marvel
-Marvel Universe Character, Series, Events and Storie Information.
+Marvel Universe Character, Series, Events and Stories Information.
 
 ## Live Preview
 
