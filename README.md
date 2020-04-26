@@ -2,6 +2,8 @@
 Marvel Universe Character, Series, Events and Stories Information.
 # Screenshot
 ![Img1](https://github.com/hraverkar/Marvel/blob/master/screenshot/msedge_KKCBemWPxd.jpg)
+
+![Img2](https://github.com/hraverkar/Marvel/blob/master/screenshot/msedge_pPBrCDQm81.png)
 ## Live Preview
 
 You can [view the app live here](https://marvelccd.herokuapp.com/)
