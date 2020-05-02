@@ -1,7 +1,7 @@
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/heroku/node-js-getting-started)
 
 # Marvel
-Marvel Universe Character, Series, Events and Stories Information.
+Marvel Universe Character, Series, Events and Stories Informations.
 # Screenshot
 ![Img1](https://github.com/hraverkar/Marvel/blob/master/screenshot/msedge_KKCBemWPxd.jpg)
 
