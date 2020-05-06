@@ -14,6 +14,7 @@ You can [view the app live here](https://marvelccd.herokuapp.com/)
 
 * Angular
 * Marvel API
+* Node.js
 
 ## Project setup
 ```
