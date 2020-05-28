@@ -12,7 +12,7 @@ You can [view the app live here](https://marvelccd.herokuapp.com/)
 
 ## Tech Stack
 
-* Angular
+* Angular 9
 * Marvel API
 * Node.js
 
